@@ -172,19 +172,20 @@ align-items:center;
 }
 
 #timer span{
-font-size:30px;
-font-weight:bold;
-color:#2c2c2c;
+font-size:32px !important;
+font-weight:800 !important;
+color:#b3862b !important;
 }
 
 #timer p{
-font-size:12px;
-margin-top:4px;
+font-size:12px !important;
+margin-top:4px !important;
+color:4a4a4a !important;
 }
 
 .time{
 font-size:28px !important;
-color:#ffffff !important;
+color:#e0e0e0 !important;
 font-weight:800 !important;
 margin-top:15px !important;
 margin-bottom:15px !important;
