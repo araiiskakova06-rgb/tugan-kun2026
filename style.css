@@ -1,4 +1,4 @@
-*{
+1*{
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -12,7 +12,8 @@ body{
 font-family:'Cormorant Garamond',serif;
 background:#efe6d7;
 overflow-x:hidden;
-color:#fff;
+color:#f5d27d;
+font-size: 22px;
 }
 
 section{
