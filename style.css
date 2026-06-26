@@ -174,7 +174,7 @@ align-items:center;
 #timer span{
 font-size:30px;
 font-weight:bold;
-color:#f3c968;
+color:#2c2c2c;
 }
 
 #timer p{
@@ -192,7 +192,7 @@ margin-bottom:15px !important;
 
 .address {
 font-size:22px !important;
-color:#ffffff !important;
+color:#2c2c2c !important;
 font-weight:700 !important;
 text-align:center !important;
 display:block !important;
