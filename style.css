@@ -144,8 +144,11 @@ color:#ffffff !important;
 }
 
 .date{
-font-size:28px;
-color:#f5d27d;
+font-size: 34px !important;
+  color: #f5d27d !important;
+  font-weight: 700 !important;
+  display: block !important;
+  margin-top: 15px !important;
 }
 
 #timer{
