@@ -415,3 +415,11 @@ section.page {
     opacity: 1;
     pointer-events: auto;
 }
+.owner-name {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    display: block !important;
+    text-align: center !important;
+    line-height: 1.4 !important; /* Даст красивый отступ между именами */
+}
