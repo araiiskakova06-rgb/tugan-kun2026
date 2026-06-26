@@ -17,17 +17,32 @@ color:#fff;
 
 section{
 width:100%;
-height:100vh;
+min-height:100vh;
 position:relative;
 display:flex;
-
+flex-direction:column;
+justify-content:center;
+align-items:center;
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
+padding:20px;
 }
 
 .hero{
 background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url(images/bg1.jpg);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+z-index:9999;
+transition:opacity 1s ease;
+}
+
+.hero.fade-out {
+opacity:0;
+pointer-events:none;
 }
 
 .invitation{
@@ -46,84 +61,47 @@ background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(images/bg4.jpg);
 background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(images/bg5.jpg);
 }
 
-.overlay{
+.hero .overlay{
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-}
-
-.envelope{
-position:relative;
-width:300px;
-height:210px;
-margin-bottom:40px;
-perspective:1200px;
-}
-
-.back{
-position:absolute;
+text-align:center;
+gap:20px;
 width:100%;
 height:100%;
-background:#d8b46c;
-border-radius:12px;
 }
 
-.front{
-position:absolute;
-bottom:0;
-width:100%;
-height:120px;
-background:#c79d4d;
-clip-path:polygon(0 0,50% 70%,100% 0,100% 100%,0 100%);
-border-radius:0 0 12px 12px;
-z-index:5;
+.hero .envelope{
+background:none !important;
+border:none !important;
+width:auto !important;
+height:auto !important;
+transform:none !important;
+position:static !important;
+margin-bottom:10px;
 }
 
-.flap{
-position:absolute;
-top:0;
-width:100%;
-height:120px;
-background:#e2c27e;
-clip-path:polygon(0 0,100% 0,50% 100%);
-transform-origin:top;
-transition:1.3s;
-z-index:8;
+.hero #envelope svg {
+width:140px !important;
+height:140px !important;
+display:block;
+margin:0 auto;
 }
 
-.letter{
-position:absolute;
-left:50%;
-top:20px;
-transform:translateX(-50%);
-width:88%;
-height:170px;
-background:white;
-border-radius:10px;
-padding:20px;
-color:#6e4d14;
-text-align:center;
-transition:1.3s;
-z-index:2;
-}
-
-.letter h2{
+.hero-title {
 font-size:28px;
-margin-bottom:12px;
+color:#fff;
+margin:10px 0 0 0;
+font-weight:700;
 }
 
-.letter p{
-font-size:20px;
+.hero-subtitle {
+font-size:18px;
+color:#fff;
+margin:0;
 }
 
-.envelope.open .flap{
-transform:rotateX(180deg);
-}
-
-.envelope.open .letter{
-transform:translate(-50%,-120px);
-}
 .glass{
 width:90%;
 max-width:380px;
@@ -134,6 +112,7 @@ backdrop-filter:blur(14px);
 -webkit-backdrop-filter:blur(14px);
 box-shadow:0 15px 35px rgba(0,0,0,.25);
 text-align:center;
+margin:0 auto !important;
 }
 
 .glass h1{
@@ -149,11 +128,19 @@ margin-bottom:15px;
 .glass h3{
 font-size:28px;
 margin-top:20px;
+font-weight:700 !important;
 }
 
 .glass p{
 font-size:22px;
 line-height:1.7;
+font-weight:600 !important;
+}
+
+section h3 + p {
+font-weight:700 !important;
+font-size:24px !important;
+color:#ffffff !important;
 }
 
 .date{
@@ -192,8 +179,22 @@ margin-top:4px;
 }
 
 .time{
-font-size:28px;
-margin-top:10px;
+font-size:28px !important;
+color:#ffffff !important;
+font-weight:800 !important;
+margin-top:15px !important;
+margin-bottom:15px !important;
+}
+
+.address {
+font-size:22px !important;
+color:#ffffff !important;
+font-weight:700 !important;
+text-align:center !important;
+display:block !important;
+margin-top:15px !important;
+margin-bottom:15px !important;
+line-height:1.4 !important;
 }
 
 #mapBtn{
@@ -231,7 +232,18 @@ text-align:left;
 }
 
 .answers label{
-font-size:20px;
+color:#ffffff !important;
+font-weight:600 !important;
+font-size:20px !important;
+display:inline-block;
+vertical-align:middle;
+transition:.3s;
+}
+
+.answers input[type=radio] {
+margin-right:8px !important;
+transform:scale(1.2);
+vertical-align:middle;
 }
 
 .counter{
@@ -270,147 +282,109 @@ margin-top:25px;
 }
 
 #openBtn{
-margin-top:35px;
+margin-top:-30px !important;
 }
-/* ===== АНИМАЦИИ ===== */
 
+/* ===== АНИМАЦИИ ===== */
 @keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(60px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+from{
+opacity:0;
+transform:translateY(60px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 @keyframes zoom{
-    from{
-        transform:scale(1.08);
-    }
-    to{
-        transform:scale(1);
-    }
+from{
+transform:scale(1.08);
+}
+to{
+transform:scale(1);
+}
 }
 
 .page{
-    animation:zoom 1.5s ease;
+animation:zoom 1.5s ease;
 }
 
 .glass{
-    animation:fadeUp 1.2s ease;
+animation:fadeUp 1.2s ease;
 }
 
 #openBtn,
 #sendBtn,
 #mapBtn,
 .counter button{
-    cursor:pointer;
-    transition:.35s;
+cursor:pointer;
+transition:.35s;
 }
 
 #openBtn:hover,
 #sendBtn:hover,
 #mapBtn:hover,
 .counter button:hover{
-    transform:translateY(-3px) scale(1.05);
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 input[type=text]:focus{
-    box-shadow:0 0 0 3px rgba(202,161,74,.35);
-}
-
-.answers label{
-    transition:.3s;
+box-shadow:0 0 0 3px rgba(202,161,74,.35);
 }
 
 .answers label:hover{
-    color:#f3c968;
+color:#f3c968;
 }
 
-/* ===== АДАПТАЦИЯ ===== */
-
+/* ===== АДАТАЦИЯ ===== */
 @media(max-width:430px){
-
-.envelope{
-    width:270px;
-    height:190px;
-}
-
-.letter{
-    height:150px;
-    padding:16px;
-}
-
-.letter h2{
-    font-size:24px;
-}
-
-.letter p{
-    font-size:18px;
-}
-
 .glass{
-    width:92%;
-    padding:22px;
+width:92%;
+padding:22px;
 }
-
 .glass h1{
-    font-size:34px;
+font-size:34px;
 }
-
 .glass h2{
-    font-size:28px;
+font-size:28px;
 }
-
 .glass h3{
-    font-size:24px;
+font-size:24px;
 }
-
 .glass p{
-    font-size:19px;
+font-size:19px;
 }
-
 #timer div{
-    width:65px;
-    height:72px;
+width:65px;
+height:72px;
 }
-
 #timer span{
-    font-size:24px;
+font-size:24px;
 }
-
 #openBtn,
-#sendBtn{
-    width:100%;
-}
-
+#sendBtn,
 #mapBtn{
-    width:100%;
+width:100%;
 }
-
 .answers label{
-    font-size:18px;
+font-size:18px;
 }
-
 .counter{
-    gap:15px;
+gap:15px;
 }
-
 .counter button{
-    width:48px;
-    height:48px;
+width:48px;
+height:48px;
 }
-
 }
 
 ::-webkit-scrollbar{
-    display:none;
+display:none;
 }
 
 body{
-    -ms-overflow-style:none;
-    scrollbar-width:none;
+-ms-overflow-style:none;
+scrollbar-width:none;
 }
