@@ -14,16 +14,14 @@ if (openBtn) {
         }, 1000);
     };
 }
-
 function autoScroll(){
-    let speed = 4;
-    let scroll = setInterval(()=>{
-        window.scrollBy(0, speed);
-        if(window.innerHeight + window.scrollY >= document.body.scrollHeight){
-            clearInterval(scroll);
-        }
-    }, 20);
+    const firstPage = document.querySelector(".invitation");
+    if (firstPage) {
+        firstPage.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 }
+
+
 
 // ===== Таймер =====
 const targetDate = new Date("2026-07-18T18:00:00").getTime();
