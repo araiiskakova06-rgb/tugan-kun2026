@@ -444,3 +444,20 @@ section.page {
     align-items: center !important;
     justify-content: center !important;
 }
+/* 1. Делаем текст самого приглашения крупным и плотным */
+.textPage p {
+    font-size: 24px !important;  /* Увеличиваем размер букв */
+    font-weight: 700 !important; /* Делаем текст жирным */
+    line-height: 1.6 !important; /* Делаем красивый отступ между строчками */
+    color: #ffffff !important;   /* Чистый белый цвет для максимальной четкости */
+}
+
+/* 2. Делаем имена "Дүрия" и "Жансерік-Сая" золотыми и еще крупнее */
+.textPage h3 + p,
+.textPage p.owner-name,
+.textPage p:last-child {
+    color: #b3862b !important;   /* Тот самый красивый темно-золотой цвет, как на таймере */
+    font-size: 28px !important;  /* Делаем имена главным акцентом */
+    font-weight: 800 !important; /* Делаем их максимально жирными */
+    margin-top: 10px !important;
+}
