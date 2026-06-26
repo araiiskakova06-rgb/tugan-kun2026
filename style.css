@@ -391,3 +391,27 @@ body{
 -ms-overflow-style:none;
 scrollbar-width:none;
 }
+/* Железно увеличиваем дату на странице приглашения */
+.invitation .date,
+section .glass p.date,
+.glass .date,
+.date {
+    font-size: 36px !important;  /* Делаем её еще крупнее и заметнее */
+    color: #f5d27d !important;
+    font-weight: 700 !important;
+    display: block !important;
+    margin-top: 15px !important;
+}
+
+/* Прячем ВСЕ основные страницы сайта, пока гость не нажал на конверт */
+section.page {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+/* Красиво и плавно показываем страницы, когда заставка растворяется */
+.hero.fade-out ~ section.page {
+    opacity: 1;
+    pointer-events: auto;
+}
