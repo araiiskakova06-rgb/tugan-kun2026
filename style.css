@@ -30,7 +30,7 @@ padding:20px;
 }
 
 .hero{
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url(images/bg1.jpg);
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url(bg1.jpg);
 position:fixed;
 top:0;
 left:0;
@@ -46,19 +46,19 @@ pointer-events:none;
 }
 
 .invitation{
-background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(images/bg2.jpg);
+background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(bg2.jpg);
 }
 
 .textPage{
-background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(images/bg3.jpg);
+background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(bg3.jpg);
 }
 
 .timerPage{
-background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(images/bg4.jpg);
+background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(bg4.jpg);
 }
 
 .formPage{
-background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(images/bg5.jpg);
+background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url(bg5.jpg);
 }
 
 .hero .overlay{
