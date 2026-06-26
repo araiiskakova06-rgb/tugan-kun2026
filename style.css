@@ -425,3 +425,22 @@ section.page {
     text-align: center !important;
     line-height: 1.4 !important; /* Даст красивый отступ между именами */
 }
+/* Жестко центрируем все кнопки на сайте */
+#openBtn, 
+#sendBtn, 
+#mapBtn,
+.counter button {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Выравниваем контейнер с кнопками */
+.glass, .overlay {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
