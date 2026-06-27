@@ -14,11 +14,24 @@ if (openBtn) {
         }, 1000);
     };
 }
-function autoScroll(){
-    const firstPage = document.querySelector(".invitation");
-    if (firstPage) {
-        firstPage.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+function autoScroll() {
+    // Находим общую высоту сайта
+    const totalHeight = document.body.scrollHeight;
+    let currentScroll = window.scrollY;
+    
+    // Запускаем плавное автоматическое движение вниз
+    const scrollInterval = setInterval(() => {
+        currentScroll += 3; // Скорость листания (можно сделать 4 или 5, если нужно быстрее)
+        window.scrollTo(0, currentScroll);
+        
+        // Когда сайт докрутится до самого низа, останавливаем автоскролл
+        if (currentScroll + window.innerHeight >= totalHeight) {
+            clearInterval(scrollInterval);
+        }
+    }, 15);
+
+    // Если гость сам дотронется до экрана пальцем, автоскролл сразу отключится, чтобы не мешать
+    window.addEventListener("touchstart", () => clearInterval(scrollInterval), { once: true });
 }
 
 
